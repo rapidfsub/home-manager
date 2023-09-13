@@ -64,6 +64,7 @@
             "raycast"
             "scroll-reverser"
             "setapp"
+            "warp"
           ];
           onActivation = {
             cleanup = "zap";
