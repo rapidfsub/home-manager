@@ -82,6 +82,10 @@ in
     userName = "Minsub Kim";
   };
 
+  programs.htop = {
+    enable = true;
+  };
+
   programs.lazygit = {
     enable = true;
   };
