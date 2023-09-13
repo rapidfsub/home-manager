@@ -60,6 +60,7 @@
           enable = true;
           casks = [
             "karabiner-elements"
+            "raycast"
           ];
           onActivation = {
             cleanup = "zap";
