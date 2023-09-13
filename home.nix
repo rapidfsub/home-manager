@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  inherit (builtins) fromJSON readFile;
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -81,7 +84,10 @@
 
   programs.vscode = {
     enable = true;
+    keybindings = fromJSON (readFile ./.vscode/keybindings.json);
+    userSettings = fromJSON (readFile ./.vscode/settings.json);
   };
+
 
   programs.zsh = {
     enable = true;
