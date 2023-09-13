@@ -58,8 +58,12 @@
 
         homebrew = {
           enable = true;
+          taps = [
+            "homebrew/cask-fonts"
+          ];
           casks = [
             "firefox"
+            "font-fantasque-sans-mono-nerd-font"
             "karabiner-elements"
             "raycast"
             "scroll-reverser"
