@@ -62,6 +62,7 @@
             "firefox"
             "karabiner-elements"
             "raycast"
+            "scroll-reverser"
           ];
           onActivation = {
             cleanup = "zap";
