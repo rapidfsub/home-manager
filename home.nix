@@ -52,6 +52,16 @@ in
       target = ".config/karabiner/karabiner.json";
     };
 
+    "fireworks/.envrc" = {
+      source = ./fireworks/.envrc;
+      target = "fireworks/.envrc";
+    };
+
+    "spark/.envrc" = {
+      source = ./spark/.envrc;
+      target = "spark/.envrc";
+    };
+
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
@@ -75,6 +85,12 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.direnv = {
+    enable = true;
+    stdlib = readFile ./direnv/direnvrc;
+    nix-direnv.enable = true;
+  };
 
   programs.eza = {
     enable = true;
