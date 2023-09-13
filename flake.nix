@@ -63,6 +63,7 @@
             "karabiner-elements"
             "raycast"
             "scroll-reverser"
+            "setapp"
           ];
           onActivation = {
             cleanup = "zap";
