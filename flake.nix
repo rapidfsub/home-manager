@@ -58,7 +58,11 @@
 
         homebrew = {
           enable = true;
+          brews = [
+            "mas"
+          ];
           taps = [
+            "homebrew/bundle"
             "homebrew/cask-fonts"
           ];
           casks = [
@@ -70,6 +74,9 @@
             "setapp"
             "warp"
           ];
+          masApps = {
+            KakaoTalk = 869223134;
+          };
           onActivation = {
             cleanup = "zap";
           };
