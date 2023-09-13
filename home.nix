@@ -92,6 +92,9 @@ in
     userSettings = fromJSON (readFile ./.vscode/settings.json);
   };
 
+  programs.zoxide = {
+    enable = true;
+  };
 
   programs.zsh = {
     enable = true;
