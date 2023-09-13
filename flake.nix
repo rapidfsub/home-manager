@@ -4,13 +4,17 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, nix-darwin, home-manager, ... }:
     let
       inherit (builtins) elem;
       inherit (nixpkgs.lib) getName;
@@ -21,6 +25,46 @@
         config.allowUnfreePredicate = pkg: elem (getName pkg) [
           "vscode"
         ];
+      };
+
+      configuration = { ... }: {
+        # List packages installed in system profile. To search by name, run:
+        # $ nix-env -qaP | grep wget
+        environment.systemPackages =
+          [
+            pkgs.vim
+          ];
+
+        # Auto upgrade nix package and the daemon service.
+        services.nix-daemon.enable = true;
+        # nix.package = pkgs.nix;
+
+        # Necessary for using flakes on this system.
+        nix.settings.experimental-features = "nix-command flakes";
+
+        # Create /etc/zshrc that loads the nix-darwin environment.
+        programs.zsh.enable = true; # default shell on catalina
+        # programs.fish.enable = true;
+
+        # Set Git commit hash for darwin-version.
+        system.configurationRevision = self.rev or self.dirtyRev or null;
+
+        # Used for backwards compatibility, please read the changelog before changing.
+        # $ darwin-rebuild changelog
+        system.stateVersion = 4;
+
+        # The platform the configuration will be used on.
+        nixpkgs.hostPlatform = "x86_64-darwin";
+
+        homebrew = {
+          enable = true;
+          casks = [
+            "karabiner-elements"
+          ];
+          onActivation = {
+            cleanup = "zap";
+          };
+        };
       };
     in
     {
@@ -34,5 +78,14 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
+
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#rapidfsub-2017
+      darwinConfigurations."rapidfsub-2017" = nix-darwin.lib.darwinSystem {
+        modules = [ configuration ];
+      };
+
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = self.darwinConfigurations."rapidfsub-2017".pkgs;
     };
 }
