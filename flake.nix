@@ -59,6 +59,7 @@
         homebrew = {
           enable = true;
           casks = [
+            "firefox"
             "karabiner-elements"
             "raycast"
           ];
