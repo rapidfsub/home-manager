@@ -76,6 +76,13 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.eza = {
+    enable = true;
+    enableAliases = true;
+    icons = true;
+    git = true;
+  };
+
   programs.git = {
     enable = true;
     userEmail = "rapidfsub@gmail.com";
