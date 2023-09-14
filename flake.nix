@@ -27,10 +27,13 @@
       inherit (flake-utils.lib) eachSystem;
       inherit (flake-utils.lib.system) aarch64-darwin x86_64-darwin;
 
+      pkgx = import nixpkgs { system = x86_64-darwin; };
+      pkgs = import nixpkgs { system = aarch64-darwin; };
+
       machines = {
-        rapidfsub-2017 = rec {
+        rapidfsub-2017 = {
           system = x86_64-darwin;
-          pkgs = import nixpkgs { inherit system; };
+          pkgs = pkgx;
         };
       };
 
@@ -86,5 +89,8 @@
           };
         });
     in
-    mergeAttrs darwinConfigurations homeConfigurations;
+    mergeAttrs (mergeAttrs darwinConfigurations homeConfigurations) {
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = pkgs;
+    };
 }
