@@ -13,7 +13,7 @@
 
   home.file = {
     ".tool-versions" = {
-      source = ./asdf/.tool-versions;
+      source = ./.config/asdf/.tool-versions;
       target = ".tool-versions";
     };
   };

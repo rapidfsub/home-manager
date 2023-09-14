@@ -13,11 +13,11 @@ in
     autocd = true;
     dotDir = "./.config/zsh";
     enableAutosuggestions = true;
-    envExtra = readFile ./zsh/.zshenv;
+    envExtra = readFile ./.config/zsh/.zshenv;
     history = {
       ignoreDups = true;
     };
-    initExtra = readFile ./zsh/.zshrc;
-    profileExtra = readFile ./zsh/.zprofile;
+    initExtra = readFile ./.config/zsh/.zshrc;
+    profileExtra = readFile ./.config/zsh/.zprofile;
   };
 }
