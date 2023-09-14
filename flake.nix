@@ -56,6 +56,13 @@
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "x86_64-darwin";
 
+        environment = {
+          shellAliases = {
+            ds = "darwin-rebuild switch --flake ~/.config/home-manager";
+            hs = "home-manager switch --flake ~/.config/home-manager";
+          };
+        };
+
         homebrew = {
           enable = true;
           brews = [
