@@ -14,6 +14,7 @@
       "firefox"
       "font-fantasque-sans-mono-nerd-font"
       "karabiner-elements"
+      "macs-fan-control"
       "microsoft-teams"
       "raycast"
       "scroll-reverser"
