@@ -69,6 +69,7 @@
             "firefox"
             "font-fantasque-sans-mono-nerd-font"
             "karabiner-elements"
+            "microsoft-teams"
             "raycast"
             "scroll-reverser"
             "setapp"
