@@ -68,9 +68,9 @@
           };
         });
 
-      homeConfigurations = eachSystem (attrNames users) (name:
+      homeConfigurations = eachSystem (attrNames users) (username:
         let
-          user = users.${name};
+          user = users.${username};
           vscode-marketplace = vscode-extensions.extensions.${user.system}.vscode-marketplace;
         in
         {
@@ -84,6 +84,7 @@
             # Optionally use extraSpecialArgs
             # to pass through arguments to home.nix
             extraSpecialArgs = {
+              inherit username;
               inherit vscode-marketplace;
             };
           };
