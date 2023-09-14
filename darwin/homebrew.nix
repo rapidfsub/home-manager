@@ -4,6 +4,7 @@
   homebrew = {
     enable = true;
     brews = [
+      "openssl"
       "mas"
     ];
     taps = [

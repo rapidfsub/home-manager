@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./home/asdf.nix
     ./home/direnv.nix
     ./home/git.nix
     ./home/karabiner.nix
@@ -29,7 +30,6 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    pkgs.rnix-lsp
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
