@@ -21,20 +21,34 @@
 
   outputs = { self, nixpkgs, flake-utils, nix-darwin, home-manager, vscode-extensions, ... }:
     let
+      inherit (builtins) attrNames elem;
+      inherit (nixpkgs.lib) getName;
       inherit (nixpkgs.lib.trivial) mergeAttrs;
       inherit (flake-utils.lib) eachSystem;
       inherit (flake-utils.lib.system) aarch64-darwin x86_64-darwin;
 
-      machine-names = [ "rapidfsub-2017" ];
-      darwinConfigurations = eachSystem machine-names (machine-name:
-        let
-          machines = {
-            rapidfsub-2017 = rec {
-              system = x86_64-darwin;
-              pkgs = import nixpkgs { inherit system; };
-            };
+      machines = {
+        rapidfsub-2017 = rec {
+          system = x86_64-darwin;
+          pkgs = import nixpkgs { inherit system; };
+        };
+      };
+
+      users = {
+        rapidfsub = rec {
+          system = x86_64-darwin;
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfreePredicate = pkg: elem (getName pkg) [
+              "vscode"
+            ];
           };
-          machine = machines.${machine-name};
+        };
+      };
+
+      darwinConfigurations = eachSystem (attrNames machines) (name:
+        let
+          machine = machines.${name};
         in
         {
           # Build darwin flake using:
@@ -51,24 +65,9 @@
           };
         });
 
-      usernames = [ "rapidfsub" ];
-      homeConfigurations = eachSystem usernames (username:
+      homeConfigurations = eachSystem (attrNames users) (name:
         let
-          inherit (builtins) elem;
-          inherit (nixpkgs.lib) getName;
-
-          users = {
-            rapidfsub = rec {
-              system = x86_64-darwin;
-              pkgs = import nixpkgs {
-                inherit system;
-                config.allowUnfreePredicate = pkg: elem (getName pkg) [
-                  "vscode"
-                ];
-              };
-            };
-          };
-          user = users.${username};
+          user = users.${name};
           vscode-marketplace = vscode-extensions.extensions.${user.system}.vscode-marketplace;
         in
         {
@@ -87,10 +86,5 @@
           };
         });
     in
-    mergeAttrs
-      {
-        # Expose the package set, including overlays, for convenience.
-        darwinPackages = self.darwinConfigurations."rapidfsub-2017".pkgs;
-      }
-      (mergeAttrs darwinConfigurations homeConfigurations);
+    mergeAttrs darwinConfigurations homeConfigurations;
 }
