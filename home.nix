@@ -7,6 +7,7 @@ in
   imports = [
     ./home/direnv.nix
     ./home/git.nix
+    ./home/karabiner.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -52,10 +53,6 @@ in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/karabiner/karabiner.json" = {
-      source = ./karabiner/karabiner.json;
-      target = ".config/karabiner/karabiner.json";
-    };
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
