@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  inherit (builtins) fromJSON readFile;
-in
 {
   imports = [
     ./home/direnv.nix
