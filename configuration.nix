@@ -1,6 +1,10 @@
 { pkgs, root, ... }:
 
 {
+  imports = [
+    ./darwin/homebrew.nix
+  ];
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
@@ -33,33 +37,6 @@
     shellAliases = {
       ds = "darwin-rebuild switch --flake ~/.config/home-manager";
       hs = "home-manager switch --flake ~/.config/home-manager";
-    };
-  };
-
-  homebrew = {
-    enable = true;
-    brews = [
-      "mas"
-    ];
-    taps = [
-      "homebrew/bundle"
-      "homebrew/cask-fonts"
-    ];
-    casks = [
-      "firefox"
-      "font-fantasque-sans-mono-nerd-font"
-      "karabiner-elements"
-      "microsoft-teams"
-      "raycast"
-      "scroll-reverser"
-      "setapp"
-      "warp"
-    ];
-    masApps = {
-      KakaoTalk = 869223134;
-    };
-    onActivation = {
-      cleanup = "zap";
     };
   };
 }
