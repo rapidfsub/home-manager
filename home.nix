@@ -4,6 +4,11 @@ let
   inherit (builtins) fromJSON readFile;
 in
 {
+  imports = [
+    ./home/direnv.nix
+    ./home/git.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "rapidfsub";
@@ -52,16 +57,6 @@ in
       target = ".config/karabiner/karabiner.json";
     };
 
-    "fireworks/.envrc" = {
-      source = ./fireworks/.envrc;
-      target = "fireworks/.envrc";
-    };
-
-    "spark/.envrc" = {
-      source = ./spark/.envrc;
-      target = "spark/.envrc";
-    };
-
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
@@ -86,12 +81,6 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.direnv = {
-    enable = true;
-    stdlib = readFile ./direnv/direnvrc;
-    nix-direnv.enable = true;
-  };
-
   programs.eza = {
     enable = true;
     enableAliases = true;
@@ -99,17 +88,7 @@ in
     git = true;
   };
 
-  programs.git = {
-    enable = true;
-    userEmail = "rapidfsub@gmail.com";
-    userName = "Minsub Kim";
-  };
-
   programs.htop = {
-    enable = true;
-  };
-
-  programs.lazygit = {
     enable = true;
   };
 
@@ -125,8 +104,5 @@ in
 
   programs.zsh = {
     enable = true;
-    shellAliases = {
-      lg = "lazygit";
-    };
   };
 }
