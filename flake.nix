@@ -21,21 +21,9 @@
 
   outputs = { self, nixpkgs, flake-utils, nix-darwin, home-manager, vscode-extensions, ... }:
     let
-      inherit (builtins) elem;
-      inherit (nixpkgs.lib) getName;
       inherit (nixpkgs.lib.trivial) mergeAttrs;
       inherit (flake-utils.lib) eachSystem;
       inherit (flake-utils.lib.system) aarch64-darwin x86_64-darwin;
-
-      system = x86_64-darwin;
-
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfreePredicate = pkg: elem (getName pkg) [
-          "vscode"
-        ];
-      };
-      vscode-marketplace = vscode-extensions.extensions.${system}.vscode-marketplace;
 
       machine-names = [ "rapidfsub-2017" ];
       darwinConfigurations = eachSystem machine-names (machine-name:
@@ -62,25 +50,47 @@
             };
           };
         });
+
+      usernames = [ "rapidfsub" ];
+      homeConfigurations = eachSystem usernames (username:
+        let
+          inherit (builtins) elem;
+          inherit (nixpkgs.lib) getName;
+
+          users = {
+            rapidfsub = rec {
+              system = x86_64-darwin;
+              pkgs = import nixpkgs {
+                inherit system;
+                config.allowUnfreePredicate = pkg: elem (getName pkg) [
+                  "vscode"
+                ];
+              };
+            };
+          };
+          user = users.${username};
+          vscode-marketplace = vscode-extensions.extensions.${user.system}.vscode-marketplace;
+        in
+        {
+          homeConfigurations = home-manager.lib.homeManagerConfiguration {
+            pkgs = user.pkgs;
+
+            # Specify your home configuration modules here, for example,
+            # the path to your home.nix.
+            modules = [ ./home.nix ];
+
+            # Optionally use extraSpecialArgs
+            # to pass through arguments to home.nix
+            extraSpecialArgs = {
+              inherit vscode-marketplace;
+            };
+          };
+        });
     in
     mergeAttrs
       {
-        homeConfigurations."rapidfsub" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          # Specify your home configuration modules here, for example,
-          # the path to your home.nix.
-          modules = [ ./home.nix ];
-
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
-          extraSpecialArgs = {
-            inherit vscode-marketplace;
-          };
-        };
-
         # Expose the package set, including overlays, for convenience.
         darwinPackages = self.darwinConfigurations."rapidfsub-2017".pkgs;
       }
-      darwinConfigurations;
+      (mergeAttrs darwinConfigurations homeConfigurations);
 }
