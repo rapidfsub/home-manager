@@ -8,6 +8,7 @@ in
     ./home/direnv.nix
     ./home/git.nix
     ./home/karabiner.nix
+    ./home/vscode.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -87,12 +88,6 @@ in
 
   programs.htop = {
     enable = true;
-  };
-
-  programs.vscode = {
-    enable = true;
-    keybindings = fromJSON (readFile ./.vscode/keybindings.json);
-    userSettings = fromJSON (readFile ./.vscode/settings.json);
   };
 
   programs.zoxide = {
