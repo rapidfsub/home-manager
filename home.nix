@@ -6,6 +6,7 @@
     ./home/git.nix
     ./home/karabiner.nix
     ./home/vscode.nix
+    ./home/zsh.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -88,10 +89,6 @@
   };
 
   programs.zoxide = {
-    enable = true;
-  };
-
-  programs.zsh = {
     enable = true;
   };
 }

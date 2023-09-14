@@ -39,4 +39,8 @@
       hs = "home-manager switch --flake ~/.config/home-manager";
     };
   };
+
+  programs.zsh = {
+    promptInit = "";
+  };
 }
