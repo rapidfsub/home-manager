@@ -23,9 +23,12 @@
     let
       inherit (builtins) elem;
       inherit (nixpkgs.lib) getName;
-      inherit (flake-utils.lib.system) x86_64-darwin;
+      inherit (nixpkgs.lib.trivial) mergeAttrs;
+      inherit (flake-utils.lib) eachSystem;
+      inherit (flake-utils.lib.system) aarch64-darwin x86_64-darwin;
 
       system = x86_64-darwin;
+
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfreePredicate = pkg: elem (getName pkg) [
@@ -33,35 +36,51 @@
         ];
       };
       vscode-marketplace = vscode-extensions.extensions.${system}.vscode-marketplace;
+
+      machine-names = [ "rapidfsub-2017" ];
+      darwinConfigurations = eachSystem machine-names (machine-name:
+        let
+          machines = {
+            rapidfsub-2017 = rec {
+              system = x86_64-darwin;
+              pkgs = import nixpkgs { inherit system; };
+            };
+          };
+          machine = machines.${machine-name};
+        in
+        {
+          # Build darwin flake using:
+          # $ darwin-rebuild build --flake .#rapidfsub-2017
+          darwinConfigurations = nix-darwin.lib.darwinSystem {
+            pkgs = machine.pkgs;
+
+            modules = [ ./configuration.nix ];
+
+            specialArgs = {
+              hostPlatform = machine.system;
+              root = self;
+            };
+          };
+        });
     in
-    {
-      homeConfigurations."rapidfsub" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+    mergeAttrs
+      {
+        homeConfigurations."rapidfsub" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
+          # Specify your home configuration modules here, for example,
+          # the path to your home.nix.
+          modules = [ ./home.nix ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs = {
-          inherit vscode-marketplace;
+          # Optionally use extraSpecialArgs
+          # to pass through arguments to home.nix
+          extraSpecialArgs = {
+            inherit vscode-marketplace;
+          };
         };
-      };
 
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#rapidfsub-2017
-      darwinConfigurations."rapidfsub-2017" = nix-darwin.lib.darwinSystem {
-        inherit pkgs;
-
-        modules = [ ./configuration.nix ];
-
-        specialArgs = {
-          root = self;
-        };
-      };
-
-      # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."rapidfsub-2017".pkgs;
-    };
+        # Expose the package set, including overlays, for convenience.
+        darwinPackages = self.darwinConfigurations."rapidfsub-2017".pkgs;
+      }
+      darwinConfigurations;
 }

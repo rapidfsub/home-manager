@@ -1,4 +1,4 @@
-{ pkgs, root, ... }:
+{ hostPlatform, pkgs, root, ... }:
 
 {
   imports = [
@@ -31,7 +31,7 @@
   system.stateVersion = 4;
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "x86_64-darwin";
+  nixpkgs.hostPlatform = hostPlatform;
 
   environment = {
     shellAliases = {
