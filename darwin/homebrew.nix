@@ -19,6 +19,7 @@
       "karabiner-elements"
       "macs-fan-control"
       "microsoft-teams"
+      "pgadmin4"
       "raycast"
       "scroll-reverser"
       "setapp"
