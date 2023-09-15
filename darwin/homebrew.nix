@@ -16,6 +16,7 @@
       "docker"
       "firefox"
       "font-fantasque-sans-mono-nerd-font"
+      "google-chrome"
       "karabiner-elements"
       "macs-fan-control"
       "microsoft-teams"
