@@ -7,11 +7,13 @@
       "openssl"
       "mas"
     ];
+    # brew tap
     taps = [
       "homebrew/bundle"
       "homebrew/cask-fonts"
     ];
     casks = [
+      "docker"
       "firefox"
       "font-fantasque-sans-mono-nerd-font"
       "karabiner-elements"
