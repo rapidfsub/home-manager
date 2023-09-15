@@ -84,6 +84,10 @@
     git = true;
   };
 
+  programs.fzf = {
+    enable = true;
+  };
+
   programs.htop = {
     enable = true;
   };
