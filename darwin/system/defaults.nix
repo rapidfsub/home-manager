@@ -12,5 +12,8 @@
       "com.apple.keyboard.fnState" = true;
       "com.apple.mouse.tapBehavior" = 1;
     };
+    dock = {
+      appswitcher-all-displays = true;
+    };
   };
 }
