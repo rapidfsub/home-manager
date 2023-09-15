@@ -3,6 +3,7 @@
 {
   imports = [
     ./darwin/homebrew.nix
+    ./darwin/system/defaults.nix
   ];
 
   # List packages installed in system profile. To search by name, run:
