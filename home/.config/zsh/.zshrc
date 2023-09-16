@@ -3,8 +3,10 @@
 . "$HOME/.nix-profile/share/asdf-vm/asdf.sh"
 
 # erlang
-unixodbc=$(nix path-info nixpkgs#unixODBC)
+NIX_PROFILE=$HOME/.nix-profile
+SSL=$(nix eval --impure --expr 'builtins.toString (with (import <nixpkgs> {}); lib.getOutput "out" openssl)')
+SSL_INCL=$(nix eval --impure --expr 'builtins.toString (with (import <nixpkgs> {}); lib.getDev openssl)')
 export KERL_BUILD_DOCS=yes
-export KERL_CONFIGURE_OPTIONS="--with-odbc=$unixodbc --disable-jit"
-export CC="/usr/bin/gcc -I$unixodbc/include"
-export LDFLAGS="-L$unixodbc/lib"
+export KERL_CONFIGURE_OPTIONS="--with-odbc=$NIX_PROFILE --with-ssl=$SSL --with-ssl-incl=$SSL_INCL --disable-jit"
+export CC="/usr/bin/gcc -I$NIX_PROFILE/include"
+export LDFLAGS="-L$NIX_PROFILE/lib"

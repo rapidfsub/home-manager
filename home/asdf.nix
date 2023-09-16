@@ -7,6 +7,7 @@
     # erlang
     fop
     jdk
+    openssl
     unixODBC
     wxGTK32
   ];
