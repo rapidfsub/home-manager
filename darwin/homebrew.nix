@@ -4,6 +4,7 @@
   homebrew = {
     enable = true;
     brews = [
+      "flyctl"
       "mas"
     ];
     # brew tap
@@ -12,18 +13,26 @@
       "homebrew/cask-fonts"
     ];
     casks = [
-      "docker"
-      "firefox"
-      "font-fantasque-sans-mono-nerd-font"
-      "google-chrome"
+      "asana"
       "karabiner-elements"
+      "logseq"
       "macs-fan-control"
       "microsoft-teams"
-      "pgadmin4"
       "raycast"
       "scroll-reverser"
       "setapp"
+      "slack"
+      # browser
+      "firefox"
+      "google-chrome"
+      # dev
+      "docker"
+      "iterm2"
+      "pgadmin4"
+      "postman"
       "warp"
+      # font
+      "font-fantasque-sans-mono-nerd-font"
     ];
     masApps = {
       KakaoTalk = 869223134;
