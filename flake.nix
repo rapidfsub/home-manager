@@ -27,37 +27,36 @@
       inherit (flake-utils.lib) eachSystem;
       inherit (flake-utils.lib.system) aarch64-darwin x86_64-darwin;
 
-      pkgx = import nixpkgs { system = x86_64-darwin; };
-      pkgs = import nixpkgs { system = aarch64-darwin; };
-
       machines = {
         rapidfsub-2017 = {
           system = x86_64-darwin;
-          pkgs = pkgx;
+        };
+        rapidfsub-2021 = {
+          system = aarch64-darwin;
         };
       };
 
       users = {
-        rapidfsub = rec {
+        rapidfsub = {
           system = x86_64-darwin;
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfreePredicate = pkg: elem (getName pkg) [
-              "vscode"
-            ];
-          };
+        };
+        rapidfsub-2021 = {
+          system = aarch64-darwin;
         };
       };
 
       darwinConfigurations = eachSystem (attrNames machines) (name:
         let
           machine = machines.${name};
+          pkgs = import nixpkgs {
+            system = machine.system;
+          };
         in
         {
           # Build darwin flake using:
           # $ darwin-rebuild build --flake .#rapidfsub-2017
           darwinConfigurations = nix-darwin.lib.darwinSystem {
-            pkgs = machine.pkgs;
+            pkgs = pkgs;
 
             modules = [ ./configuration.nix ];
 
@@ -71,11 +70,17 @@
       homeConfigurations = eachSystem (attrNames users) (username:
         let
           user = users.${username};
+          pkgs = import nixpkgs {
+            system = user.system;
+            config.allowUnfreePredicate = pkg: elem (getName pkg) [
+              "vscode"
+            ];
+          };
           vscode-marketplace = vscode-extensions.extensions.${user.system}.vscode-marketplace;
         in
         {
           homeConfigurations = home-manager.lib.homeManagerConfiguration {
-            pkgs = user.pkgs;
+            pkgs = pkgs;
 
             # Specify your home configuration modules here, for example,
             # the path to your home.nix.
@@ -92,6 +97,8 @@
     in
     mergeAttrs (mergeAttrs darwinConfigurations homeConfigurations) {
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = pkgs;
+      darwinPackages = import nixpkgs {
+        system = aarch64-darwin;
+      };
     };
 }
