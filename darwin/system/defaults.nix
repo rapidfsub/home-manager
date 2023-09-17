@@ -4,6 +4,7 @@
   system.defaults = {
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
+      AppleShowAllFiles = true;
       NSAutomaticCapitalizationEnabled = false;
       NSAutomaticDashSubstitutionEnabled = false;
       NSAutomaticPeriodSubstitutionEnabled = false;
@@ -14,6 +15,12 @@
     };
     dock = {
       appswitcher-all-displays = true;
+      autohide = true;
+      orientation = "left";
+      show-recents = false;
+      static-only = true;
+      tilesize = 48;
     };
+    CustomSystemPreferences = { };
   };
 }
