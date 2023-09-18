@@ -8,9 +8,10 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [
-    pkgs.home-manager
-    pkgs.rnix-lsp
+  environment.systemPackages = with pkgs; [
+    home-manager
+    rnix-lsp
+    stack
   ];
 
   # Auto upgrade nix package and the daemon service.
