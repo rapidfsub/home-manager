@@ -1,9 +1,10 @@
-{ pkgs, root, ... }:
+{ ... }:
 
 {
   homebrew = {
     enable = true;
     brews = [
+      "exercism"
       "flyctl"
       "mackup"
       "mas"
