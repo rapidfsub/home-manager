@@ -6,6 +6,7 @@
     ./home/direnv.nix
     ./home/git.nix
     ./home/karabiner.nix
+    ./home/mackup.nix
     ./home/vscode.nix
     ./home/zsh.nix
   ];

@@ -5,6 +5,7 @@
     enable = true;
     brews = [
       "flyctl"
+      "mackup"
       "mas"
     ];
     # brew tap
