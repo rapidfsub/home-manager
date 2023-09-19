@@ -41,7 +41,7 @@
       };
 
       users = {
-        rapidfsub = {
+        rxpidfsub = {
           system = x86_64-darwin;
         };
         rapidfsub-2021 = {
