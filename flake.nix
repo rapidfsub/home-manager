@@ -27,6 +27,10 @@
       inherit (flake-utils.lib) eachSystem;
       inherit (flake-utils.lib.system) aarch64-darwin x86_64-darwin;
 
+      pkgx = import nixpkgs {
+        system = x86_64-darwin;
+      };
+
       machines = {
         rapidfsub-2017 = {
           system = x86_64-darwin;
@@ -89,6 +93,7 @@
             # Optionally use extraSpecialArgs
             # to pass through arguments to home.nix
             extraSpecialArgs = {
+              inherit pkgx;
               inherit username;
               inherit vscode-marketplace;
             };
@@ -97,8 +102,6 @@
     in
     mergeAttrs (mergeAttrs darwinConfigurations homeConfigurations) {
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = import nixpkgs {
-        system = aarch64-darwin;
-      };
+      darwinPackages = pkgx;
     };
 }

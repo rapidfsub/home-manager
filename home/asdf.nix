@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgx, ... }:
 
 let
-  inherit (pkgs.lib) getDev getOutput;
+  inherit (pkgx.lib) getDev getOutput;
 in
 {
-  home.packages = with pkgs; [
+  home.packages = with pkgx; [
     # asdf
     asdf-vm
     # erlang
@@ -14,16 +14,16 @@ in
     unixODBC
     wxGTK32
     (writeShellScriptBin "install-erlang.sh" ''
-      NIX_PROFILE=$HOME/.nix-profile
+      ODBC=${getOutput "out" unixODBC}
       SSL=${getOutput "out" openssl}
       SSL_INCL=${getDev openssl}
 
       asdf plugin add erlang
 
       KERL_BUILD_DOCS=yes \
-        KERL_CONFIGURE_OPTIONS="--with-odbc=$NIX_PROFILE --with-ssl=$SSL --with-ssl-incl=$SSL_INCL --disable-jit" \
-        CC="/usr/bin/gcc -I$NIX_PROFILE/include" \
-        LDFLAGS="-L$NIX_PROFILE/lib" \
+        KERL_CONFIGURE_OPTIONS="--with-odbc=$ODBC --with-ssl=$SSL --with-ssl-incl=$SSL_INCL --disable-jit" \
+        CFLAGS="-I$ODBC/include -O2" \
+        LDFLAGS="-L$ODBC/lib" \
         asdf install erlang
     '')
   ];
