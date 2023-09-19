@@ -30,6 +30,7 @@
       # dev
       "docker"
       "iterm2"
+      "livebook"
       "pgadmin4"
       "postman"
       "warp"
