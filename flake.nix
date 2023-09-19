@@ -66,7 +66,7 @@
 
             specialArgs = {
               hostPlatform = machine.system;
-              root = self;
+              rev = nix-darwin.rev;
             };
           };
         });

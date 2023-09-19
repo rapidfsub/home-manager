@@ -1,4 +1,5 @@
-{ hostPlatform, pkgs, root, ... }:
+# { config, lib, modulesPath, options, pkgs, specialArgs }:
+{ hostPlatform, pkgs, rev, ... }:
 
 {
   imports = [
@@ -26,7 +27,7 @@
   # programs.fish.enable = true;
 
   # Set Git commit hash for darwin-version.
-  system.configurationRevision = root.rev or root.dirtyRev or null;
+  system.configurationRevision = rev;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
