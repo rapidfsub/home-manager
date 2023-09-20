@@ -38,6 +38,9 @@
         rapidfsub-2021 = {
           system = aarch64-darwin;
         };
+        spark = {
+          system = aarch64-darwin;
+        };
       };
 
       users = {
@@ -45,6 +48,9 @@
           system = x86_64-darwin;
         };
         rapidfsub-2021 = {
+          system = aarch64-darwin;
+        };
+        spark = {
           system = aarch64-darwin;
         };
       };
