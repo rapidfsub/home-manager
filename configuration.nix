@@ -39,7 +39,10 @@
   environment = {
     shellAliases = {
       ds = "darwin-rebuild switch --flake ~/.config/home-manager";
-      hs = "home-manager switch --flake ~/.config/home-manager";
+      hs = ''
+        mkdir -p ~/.local/state/nix/profiles && \
+          home-manager switch --flake ~/.config/home-manager
+      '';
     };
   };
 
