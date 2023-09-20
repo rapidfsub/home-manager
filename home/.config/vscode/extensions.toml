@@ -7,7 +7,8 @@ recommendations = [
   "GitHub.copilot",
   "ms-azuretools.vscode-docker",
   "ms-vscode-remote.remote-containers",
-  # config
+  # document
+  "mechatroner.rainbow-csv",
   "PascalReitermann93.vscode-yaml-sort",
   "richie5um2.vscode-sort-json",
   "tamasfe.even-better-toml",
