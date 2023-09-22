@@ -108,8 +108,5 @@
           };
         });
     in
-    mergeAttrs (mergeAttrs darwinConfigurations homeConfigurations) {
-      # Expose the package set, including overlays, for convenience.
-      darwinPackages = pkgx;
-    };
+    mergeAttrs darwinConfigurations homeConfigurations;
 }
