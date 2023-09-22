@@ -4,10 +4,12 @@
   inputs =
     {
       # Specify the source of Home Manager and Nixpkgs.
-      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+      nixpkgs = {
+        url = "github:nixos/nixpkgs?ref=8b5ab8341e33322e5b66fb46ce23d724050f6606";
+      };
       flake-utils.url = "github:numtide/flake-utils";
       nix-darwin = {
-        url = "github:LnL7/nix-darwin";
+        url = "github:LnL7/nix-darwin?ref=afeddc412b3a3b0e7c9ef7ea5fbdf2186781d102";
         inputs.nixpkgs.follows = "nixpkgs";
       };
       home-manager = {
