@@ -41,7 +41,8 @@
       ds = "darwin-rebuild switch --flake ~/.config/home-manager";
       hs = ''
         mkdir -p ~/.local/state/nix/profiles && \
-          home-manager switch --flake ~/.config/home-manager
+          home-manager switch --flake ~/.config/home-manager && \
+          rm -f $HOME/.vscode/extensions/{.obsolete,extensions.json}
       '';
     };
   };
