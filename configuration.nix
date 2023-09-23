@@ -44,6 +44,10 @@
           home-manager switch --flake ~/.config/home-manager && \
           rm -f $HOME/.vscode/extensions/{.obsolete,extensions.json}
       '';
+      mrf = ''
+        pkill iTerm2 || \
+          mackup restore -f
+      '';
     };
   };
 
