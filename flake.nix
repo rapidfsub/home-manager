@@ -49,7 +49,7 @@
         rxpidfsub = {
           system = x86_64-darwin;
         };
-        rapidfsub-2021 = {
+        rapidfsub = {
           system = aarch64-darwin;
         };
         spark = {
