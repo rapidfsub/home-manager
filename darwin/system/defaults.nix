@@ -21,6 +21,10 @@
       static-only = true;
       tilesize = 48;
     };
-    CustomSystemPreferences = { };
+    CustomUserPreferences = {
+      "com.apple.AppleMultitouchTrackpad" = {
+        ForceSuppressed = 1;
+      };
+    };
   };
 }
