@@ -17,6 +17,7 @@
     casks = [
       "asana"
       "karabiner-elements"
+      "keka"
       "logseq"
       "macs-fan-control"
       "microsoft-teams"
