@@ -18,7 +18,6 @@
   "editor.fontFamily": "'FantasqueSansM Nerd Font Mono', D2Coding, Menlo, Monaco, 'Courier New', monospace",
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "file",
-  "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
