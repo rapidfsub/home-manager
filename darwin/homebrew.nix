@@ -44,5 +44,8 @@
     onActivation = {
       cleanup = "zap";
     };
+    global = {
+      autoUpdate = true;
+    };
   };
 }
