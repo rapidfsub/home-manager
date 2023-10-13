@@ -9,7 +9,7 @@ recommendations = [
   "ms-vscode-remote.remote-containers",
   # document
   "mechatroner.rainbow-csv",
-  "PascalReitermann93.vscode-yaml-sort",
+  "redhat.vscode-yaml",
   "richie5um2.vscode-sort-json",
   "tamasfe.even-better-toml",
   # web
