@@ -35,6 +35,7 @@
   "files.saveConflictResolution": "overwriteFileOnDisk",
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "git.openRepositoryInParentFolders": "always",
   "html.format.extraLiners": "",
   "html.format.indentInnerHtml": true,
   "html.format.maxPreserveNewLines": 1,
