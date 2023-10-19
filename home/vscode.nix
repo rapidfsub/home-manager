@@ -16,5 +16,8 @@ in
     extensions = map getPackage extensions.recommendations;
     keybindings = importJSON ./.config/vscode/keybindings.json;
     userSettings = importJSON ../.vscode/settings.json;
+    globalSnippets = {
+      surface = importJSON ./.config/vscode/surface.code-snippets;
+    };
   };
 }
