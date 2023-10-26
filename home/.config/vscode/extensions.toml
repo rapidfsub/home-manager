@@ -39,4 +39,6 @@ recommendations = [
   "vscjava.vscode-spring-initializr",
   "vmware.vscode-spring-boot",
   "vscjava.vscode-spring-boot-dashboard",
+  #rust
+  "rust-lang.rust-analyzer",
 ]
