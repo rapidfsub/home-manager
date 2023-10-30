@@ -21,7 +21,6 @@
       "keka"
       "logseq"
       "macs-fan-control"
-      "microsoft-teams"
       "raycast"
       "scroll-reverser"
       "setapp"
