@@ -17,6 +17,7 @@
     casks = [
       "asana"
       "figma"
+      "gimp"
       "karabiner-elements"
       "keka"
       "logseq"
