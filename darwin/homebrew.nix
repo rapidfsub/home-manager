@@ -16,11 +16,11 @@
     ];
     casks = [
       "asana"
+      "figma"
       "karabiner-elements"
       "keka"
       "logseq"
       "macs-fan-control"
-      "microsoft-teams"
       "raycast"
       "scroll-reverser"
       "setapp"
@@ -43,6 +43,9 @@
     };
     onActivation = {
       cleanup = "zap";
+    };
+    global = {
+      autoUpdate = true;
     };
   };
 }

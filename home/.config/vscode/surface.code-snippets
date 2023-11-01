@@ -1,0 +1,49 @@
+{
+  "Surface Component": {
+    "body": [
+      "use Surface.Component",
+      "",
+      "@impl Surface.Component",
+      "def render(assigns) do",
+      "  ~F\"\"\"",
+      "  \"\"\"",
+      "end"
+    ],
+    "description": "Surface Component",
+    "prefix": [
+      "sfc"
+    ],
+    "scope": "elixir"
+  },
+  "Surface Link": {
+    "body": [
+      "alias Surface.Components.Link"
+    ],
+    "description": "Surface Link",
+    "prefix": [
+      "sfln"
+    ],
+    "scope": "elixir"
+  },
+  "Surface LiveView": {
+    "body": [
+      "use $1, :surface_live_view",
+      "",
+      "@impl Phoenix.LiveView",
+      "def mount(_params, _session, socket) do",
+      "  {:ok, socket}",
+      "end",
+      "",
+      "@impl Phoenix.LiveView",
+      "def render(assigns) do",
+      "  ~F\"\"\"",
+      "  \"\"\"",
+      "end"
+    ],
+    "description": "Surface LiveView",
+    "prefix": [
+      "sfl"
+    ],
+    "scope": "elixir"
+  }
+}
