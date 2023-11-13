@@ -41,6 +41,7 @@
   "html.format.maxPreserveNewLines": 1,
   "html.format.preserveNewLines": true,
   "nix.enableLanguageServer": true,
+  "rust-analyzer.check.command": "clippy",
   "terminal.integrated.scrollback": 10000000,
   "window.zoomLevel": 2
 }
