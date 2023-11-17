@@ -41,6 +41,7 @@
     ];
     masApps = {
       KakaoTalk = 869223134;
+      PolarisOffice = 1098211970;
     };
     onActivation = {
       cleanup = "zap";
