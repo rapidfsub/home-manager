@@ -44,7 +44,9 @@
       PolarisOffice = 1098211970;
     };
     onActivation = {
+      autoUpdate = true;
       cleanup = "zap";
+      upgrade = true;
     };
     global = {
       autoUpdate = true;
