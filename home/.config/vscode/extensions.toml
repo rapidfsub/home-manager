@@ -41,4 +41,5 @@ recommendations = [
   "vscjava.vscode-spring-boot-dashboard",
   #rust
   "rust-lang.rust-analyzer",
+  "a5huynh.vscode-ron",
 ]
