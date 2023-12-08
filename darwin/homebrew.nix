@@ -17,6 +17,7 @@
     casks = [
       "asana"
       "figma"
+      "gimp"
       "karabiner-elements"
       "keka"
       "logseq"
@@ -40,9 +41,12 @@
     ];
     masApps = {
       KakaoTalk = 869223134;
+      PolarisOffice = 1098211970;
     };
     onActivation = {
+      autoUpdate = true;
       cleanup = "zap";
+      upgrade = true;
     };
     global = {
       autoUpdate = true;
