@@ -15,6 +15,7 @@ recommendations = [
   "tamasfe.even-better-toml",
   # web
   "bradlc.vscode-tailwindcss",
+  "csstools.postcss",
   "dbaeumer.vscode-eslint",
   # elixir
   "JakeBecker.elixir-ls",
