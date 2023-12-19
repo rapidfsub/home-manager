@@ -15,7 +15,6 @@
       "homebrew/cask-fonts"
     ];
     casks = [
-      "asana"
       "figma"
       "gimp"
       "karabiner-elements"
