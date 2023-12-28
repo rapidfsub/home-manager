@@ -26,6 +26,7 @@
       "setapp"
       "slack"
       # browser
+      "brave-browser"
       "firefox"
       "google-chrome"
       # dev
