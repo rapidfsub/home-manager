@@ -30,6 +30,7 @@
       "brave-browser"
       "firefox"
       "google-chrome"
+      "tor-browser"
       # dev
       "docker"
       "iterm2"
