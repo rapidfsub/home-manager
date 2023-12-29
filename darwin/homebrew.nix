@@ -41,6 +41,7 @@
       "font-fantasque-sans-mono-nerd-font"
     ];
     masApps = {
+      Bitwarden = 1352778147;
       KakaoTalk = 869223134;
       PolarisOffice = 1098211970;
     };
