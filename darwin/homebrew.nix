@@ -37,7 +37,6 @@
       "livebook"
       "pgadmin4"
       "postman"
-      "warp"
       # font
       "font-fantasque-sans-mono-nerd-font"
     ];
