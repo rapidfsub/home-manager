@@ -42,6 +42,7 @@
     ];
     masApps = {
       Bitwarden = 1352778147;
+      HotKey = 975890633;
       KakaoTalk = 869223134;
       PolarisOffice = 1098211970;
     };
