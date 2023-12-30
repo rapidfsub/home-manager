@@ -22,6 +22,7 @@
       "logseq"
       "macs-fan-control"
       "raycast"
+      "rectangle"
       "scroll-reverser"
       "setapp"
       "slack"
