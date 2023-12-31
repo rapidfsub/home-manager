@@ -5,19 +5,19 @@
     {
       # Specify the source of Home Manager and Nixpkgs.
       nixpkgs = {
-        url = "github:nixos/nixpkgs?ref=8b5ab8341e33322e5b66fb46ce23d724050f6606";
+        url = "github:nixos/nixpkgs?ref=69de178b4e8fa8e0ef4c168bad82702c75bdecbd";
       };
       flake-utils.url = "github:numtide/flake-utils";
       nix-darwin = {
-        url = "github:LnL7/nix-darwin?ref=afeddc412b3a3b0e7c9ef7ea5fbdf2186781d102";
+        url = "github:LnL7/nix-darwin?ref=4b9b83d5a92e8c1fbfd8eb27eda375908c11ec4d";
         inputs.nixpkgs.follows = "nixpkgs";
       };
       home-manager = {
-        url = "github:nix-community/home-manager?ref=b62f549653e97d78392c1e282b8ca76546a86585";
+        url = "github:nix-community/home-manager?ref=6761b8188b860f374b457eddfdb05c82eef9752f";
         inputs.nixpkgs.follows = "nixpkgs";
       };
       vscode-extensions = {
-        url = "github:nix-community/nix-vscode-extensions?ref=99fe4360baadb636d40f00995a25d3f2fdc50097";
+        url = "github:nix-community/nix-vscode-extensions?ref=edf4473be9f0becf2567db862b1d2fe7075de41c";
       };
     };
 
