@@ -7,6 +7,7 @@
     ./home/git.nix
     ./home/karabiner.nix
     ./home/mackup.nix
+    ./home/starship.nix
     ./home/vscode.nix
     ./home/zsh.nix
   ];
