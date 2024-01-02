@@ -10,9 +10,9 @@ in
       target = "fireworks/.envrc";
     };
 
-    "aidkr/.envrc" = {
-      source = ./aidkr/.envrc;
-      target = "aidkr/.envrc";
+    "devall/.envrc" = {
+      source = ./devall/.envrc;
+      target = "devall/.envrc";
     };
   };
 

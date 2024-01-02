@@ -2,9 +2,9 @@
 
 {
   home.file = {
-    ".config/git/aidkr.inc" = {
-      source = ./.config/git/aidkr.inc;
-      target = ".config/git/aidkr.inc";
+    ".config/git/devall.inc" = {
+      source = ./.config/git/devall.inc;
+      target = ".config/git/devall.inc";
     };
 
     ".config/git/default.inc" = {
@@ -20,8 +20,8 @@
         path = "./default.inc";
       };
       includeIf = {
-        "gitdir:~/aidkr/" = {
-          path = "./aidkr.inc";
+        "gitdir:~/devall/" = {
+          path = "./devall.inc";
         };
       };
     };
