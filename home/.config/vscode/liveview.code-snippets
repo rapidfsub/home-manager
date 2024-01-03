@@ -1,0 +1,53 @@
+{
+  "LiveView Heex Literal": {
+    "body": [
+      "~H\"\"\"",
+      "$0",
+      "\"\"\""
+    ],
+    "description": "LiveView Heex Literal",
+    "prefix": [
+      "lvhx"
+    ],
+    "scope": "elixir"
+  },
+  "Use LiveView": {
+    "body": [
+      "use $0, :live_view"
+    ],
+    "description": "Use LiveView",
+    "prefix": [
+      "ulv"
+    ],
+    "scope": "elixir"
+  },
+  "LiveView Mount": {
+    "body": [
+      "@impl Phoenix.LiveView",
+      "def mount(_params, _session, socket) do",
+      "  $0",
+      "  {:ok, socket}",
+      "end"
+    ],
+    "description": "LiveView Mount",
+    "prefix": [
+      "lvmnt"
+    ],
+    "scope": "elixir"
+  },
+  "LiveView Render": {
+    "body": [
+      "@impl Phoenix.LiveView",
+      "def render(assigns) do",
+      "  ~H\"\"\"",
+      "  $0",
+      "  \"\"\"",
+      "end"
+    ],
+    "description": "LiveView Render",
+    "prefix": [
+      "lvrdr"
+    ],
+    "scope": "elixir"
+  }
+}

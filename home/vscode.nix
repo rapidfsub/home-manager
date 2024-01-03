@@ -17,6 +17,7 @@ in
     keybindings = importJSON ./.config/vscode/keybindings.json;
     userSettings = importJSON ../.vscode/settings.json;
     globalSnippets = {
+      liveview = importJSON ./.config/vscode/liveview.code-snippets;
       surface = importJSON ./.config/vscode/surface.code-snippets;
     };
   };
