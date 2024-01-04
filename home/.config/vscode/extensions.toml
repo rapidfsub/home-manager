@@ -3,7 +3,6 @@ recommendations = [
   "bbenoist.Nix",
   "jnoortheen.nix-ide",
   # dev
-  "eamodio.gitlens",
   "Codeium.codeium",
   "GitHub.vscode-github-actions",
   "ms-azuretools.vscode-docker",
