@@ -7,6 +7,7 @@ recommendations = [
   "GitHub.vscode-github-actions",
   "ms-azuretools.vscode-docker",
   "ms-vscode-remote.remote-containers",
+  "WakaTime.vscode-wakatime",
   # document
   "redhat.vscode-yaml",
   "richie5um2.vscode-sort-json",
