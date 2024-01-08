@@ -3,12 +3,13 @@ recommendations = [
   "bbenoist.Nix",
   "jnoortheen.nix-ide",
   # dev
-  "Codeium.codeium",
+  "GitHub.copilot",
   "GitHub.vscode-github-actions",
   "ms-azuretools.vscode-docker",
   "ms-vscode-remote.remote-containers",
   "WakaTime.vscode-wakatime",
   # document
+  "mechatroner.rainbow-csv",
   "redhat.vscode-yaml",
   "richie5um2.vscode-sort-json",
   "tamasfe.even-better-toml",
