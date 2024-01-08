@@ -19,11 +19,11 @@
       "gimp"
       "karabiner-elements"
       "keka"
+      "linearmouse"
       "logseq"
       "macs-fan-control"
       "raycast"
       "rectangle"
-      "scroll-reverser"
       "setapp"
       "slack"
       # browser
