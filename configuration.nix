@@ -42,8 +42,8 @@
       hs = ''
         mkdir -p ~/.local/state/nix/profiles && \
           home-manager switch --flake ~/.config/home-manager && \
-          find $HOME/.vscode/extensions/* -depth 0 -type f | xargs rm && \
-          find $HOME/.vscode/extensions/* -depth 0 -type d | xargs rm -rf
+          find $HOME/.vscode/extensions/* -depth 0 -type d | xargs rm -rf && \
+          rm -f $HOME/.vscode/extensions/{.obsolete,extensions.json}
       '';
       mrf = ''
         pkill iTerm2 || \
