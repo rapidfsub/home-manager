@@ -26,6 +26,7 @@
       "rectangle"
       "setapp"
       "slack"
+      "zoom"
       # browser
       "arc"
       "brave-browser"
