@@ -1,23 +1,15 @@
 {
-  "LiveView Heex Literal": {
+  "Define LiveView Function Component": {
     "body": [
-      "~H\"\"\"",
-      "$0",
-      "\"\"\""
+      "def $0(assigns) do",
+      "  ~H\"\"\"",
+      "  ",
+      "  \"\"\"",
+      "end"
     ],
-    "description": "LiveView Heex Literal",
+    "description": "Define LiveView Function Component",
     "prefix": [
-      "lvhx"
-    ],
-    "scope": "elixir"
-  },
-  "Use LiveView": {
-    "body": [
-      "use $0, :live_view"
-    ],
-    "description": "Use LiveView",
-    "prefix": [
-      "ulv"
+      "lvc"
     ],
     "scope": "elixir"
   },
@@ -47,6 +39,26 @@
     "description": "LiveView Render",
     "prefix": [
       "lvrdr"
+    ],
+    "scope": "elixir"
+  },
+  "Use LiveView": {
+    "body": [
+      "use $0, :live_view"
+    ],
+    "description": "Use LiveView",
+    "prefix": [
+      "ulv"
+    ],
+    "scope": "elixir"
+  },
+  "Use Phoenix Component": {
+    "body": [
+      "use Phoenix.Component"
+    ],
+    "description": "Use Phoenix Component",
+    "prefix": [
+      "upc"
     ],
     "scope": "elixir"
   }
