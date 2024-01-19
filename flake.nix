@@ -86,6 +86,7 @@
             system = user.system;
             config.allowUnfreePredicate = pkg: elem (getName pkg) [
               "vscode"
+              "vscode-insiders"
             ];
           };
           vscode-marketplace = vscode-extensions.extensions.${user.system}.vscode-marketplace;
