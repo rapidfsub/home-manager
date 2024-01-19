@@ -38,6 +38,7 @@
 
   environment = {
     shellAliases = {
+      ci = "code-insiders";
       ds = "darwin-rebuild switch --flake ~/.config/home-manager";
       hs = ''
         mkdir -p ~/.local/state/nix/profiles && \
