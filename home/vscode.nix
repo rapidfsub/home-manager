@@ -18,7 +18,7 @@ in
     package = (pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: rec {
       src = (fetchTarball {
         url = "https://code.visualstudio.com/sha/download?build=insider&os=darwin-universal";
-        sha256 = "1j33g5c2hjcgbdk7s9607g9ap7v0h6lpdsg51xwd80wsf3hr93d9";
+        sha256 = "0bgkrvlpslx2xbvx662j0nsg77shipskvcg5i5jbvi02m8iv8f9m";
       });
       version = "latest";
 
