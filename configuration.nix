@@ -14,6 +14,7 @@
     rnix-lsp
     stack
     pkgx.fd
+    pkgx.git-delete-merged-branches
     pkgx.ripgrep
     pkgx.typos
   ];
