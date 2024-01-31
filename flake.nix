@@ -73,6 +73,8 @@
             modules = [ ./configuration.nix ];
 
             specialArgs = {
+              inherit pkgx;
+
               hostPlatform = machine.system;
               rev = nix-darwin.rev;
             };

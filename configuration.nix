@@ -1,5 +1,5 @@
 # { config, lib, modulesPath, options, pkgs, specialArgs }:
-{ hostPlatform, pkgs, rev, ... }:
+{ hostPlatform, pkgs, pkgx, rev, ... }:
 
 {
   imports = [
@@ -13,6 +13,9 @@
     home-manager
     rnix-lsp
     stack
+    pkgx.fd
+    pkgx.ripgrep
+    pkgx.typos
   ];
 
   # Auto upgrade nix package and the daemon service.
