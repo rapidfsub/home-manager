@@ -1,0 +1,65 @@
+{
+  "Define LiveView Function Component": {
+    "body": [
+      "def $0(assigns) do",
+      "  ~H\"\"\"",
+      "  ",
+      "  \"\"\"",
+      "end"
+    ],
+    "description": "Define LiveView Function Component",
+    "prefix": [
+      "lvc"
+    ],
+    "scope": "elixir"
+  },
+  "LiveView Mount": {
+    "body": [
+      "@impl Phoenix.LiveView",
+      "def mount(_params, _session, socket) do",
+      "  $0",
+      "  {:ok, socket}",
+      "end"
+    ],
+    "description": "LiveView Mount",
+    "prefix": [
+      "lvmnt"
+    ],
+    "scope": "elixir"
+  },
+  "LiveView Render": {
+    "body": [
+      "@impl Phoenix.LiveView",
+      "def render(assigns) do",
+      "  ~H\"\"\"",
+      "  $0",
+      "  \"\"\"",
+      "end"
+    ],
+    "description": "LiveView Render",
+    "prefix": [
+      "lvrdr"
+    ],
+    "scope": "elixir"
+  },
+  "Use LiveView": {
+    "body": [
+      "use $0, :live_view"
+    ],
+    "description": "Use LiveView",
+    "prefix": [
+      "ulv"
+    ],
+    "scope": "elixir"
+  },
+  "Use Phoenix Component": {
+    "body": [
+      "use Phoenix.Component"
+    ],
+    "description": "Use Phoenix Component",
+    "prefix": [
+      "upc"
+    ],
+    "scope": "elixir"
+  }
+}

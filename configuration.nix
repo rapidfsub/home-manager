@@ -1,5 +1,5 @@
 # { config, lib, modulesPath, options, pkgs, specialArgs }:
-{ hostPlatform, pkgs, rev, ... }:
+{ hostPlatform, pkgs, pkgx, rev, ... }:
 
 {
   imports = [
@@ -13,6 +13,10 @@
     home-manager
     rnix-lsp
     stack
+    pkgx.fd
+    pkgx.git-delete-merged-branches
+    pkgx.ripgrep
+    pkgx.typos
   ];
 
   # Auto upgrade nix package and the daemon service.
@@ -38,11 +42,17 @@
 
   environment = {
     shellAliases = {
+      ci = "code-insiders";
       ds = "darwin-rebuild switch --flake ~/.config/home-manager";
       hs = ''
         mkdir -p ~/.local/state/nix/profiles && \
           home-manager switch --flake ~/.config/home-manager && \
-          rm -f $HOME/.vscode/extensions/{.obsolete,extensions.json}
+          rm -f \
+            $HOME/.vscode/extensions/{.obsolete,extensions.json} \
+            $HOME/.vscode-insiders/extensions/{.obsolete,extensions.json} && \
+          find -depth 0 -type d \
+            $HOME/.vscode/extensions/* \
+            $HOME/.vscode-insiders/extensions/* -exec rm -rf {} \; 2>/dev/null
       '';
       mrf = ''
         pkill iTerm2 || \
