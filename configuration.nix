@@ -11,6 +11,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     home-manager
+    rar
     rnix-lsp
     stack
     pkgx.fd
