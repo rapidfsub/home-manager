@@ -14,6 +14,7 @@
     rar
     rnix-lsp
     stack
+    vscode
     pkgx.fd
     pkgx.git-delete-merged-branches
     pkgx.ripgrep

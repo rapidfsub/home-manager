@@ -64,6 +64,7 @@
             system = machine.system;
             config.allowUnfreePredicate = pkg: elem (getName pkg) [
               "rar"
+              "vscode"
             ];
           };
         in
