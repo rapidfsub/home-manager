@@ -22,6 +22,7 @@
       "linearmouse"
       "logseq"
       "macs-fan-control"
+      "notion"
       "raycast"
       "rectangle"
       "setapp"
