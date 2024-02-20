@@ -19,9 +19,12 @@
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "file",
   "editor.minimap.enabled": false,
+  "editor.quickSuggestionsDelay": 500,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
+  "elixirLS.autoInsertRequiredAlias": false,
+  "elixirLS.suggestSpecs": false,
   "emmet.includeLanguages": {
     "elixir": "html",
     "phoenix-heex": "html"
