@@ -13,7 +13,6 @@
     home-manager
     rnix-lsp
     stack
-    vscode
     pkgx.fd
     pkgx.git-delete-merged-branches
     pkgx.rar

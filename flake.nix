@@ -65,9 +65,6 @@
           machine = machines.${name};
           pkgs = import nixpkgs {
             system = machine.system;
-            config.allowUnfreePredicate = pkg: elem (getName pkg) [
-              "vscode"
-            ];
           };
         in
         {
