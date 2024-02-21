@@ -6,6 +6,7 @@ recommendations = [
   "adpyke.vscode-sql-formatter",
   "deerawan.vscode-dash",
   "donjayamanne.githistory",
+  "EditorConfig.EditorConfig",
   "GitHub.copilot",
   "GitHub.copilot-chat",
   "GitHub.vscode-github-actions",
@@ -45,7 +46,9 @@ recommendations = [
   "vscjava.vscode-spring-initializr",
   "vmware.vscode-spring-boot",
   "vscjava.vscode-spring-boot-dashboard",
-  #rust
+  # rust
   "rust-lang.rust-analyzer",
   "a5huynh.vscode-ron",
+  # shell script
+  "mkhl.shfmt",
 ]

@@ -11,13 +11,14 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     home-manager
-    rar
     rnix-lsp
     stack
     vscode
     pkgx.fd
     pkgx.git-delete-merged-branches
+    pkgx.rar
     pkgx.ripgrep
+    pkgx.shfmt
     pkgx.typos
   ];
 
