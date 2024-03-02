@@ -22,6 +22,7 @@
       "linearmouse"
       "logseq"
       "macs-fan-control"
+      "notion"
       "raycast"
       "rectangle"
       "setapp"
@@ -35,6 +36,7 @@
       "tor-browser"
       # dev
       "docker"
+      "gitbutler"
       "iterm2"
       "livebook"
       "pgadmin4"

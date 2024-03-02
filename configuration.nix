@@ -15,7 +15,9 @@
     stack
     pkgx.fd
     pkgx.git-delete-merged-branches
+    pkgx.rar
     pkgx.ripgrep
+    pkgx.shfmt
     pkgx.typos
   ];
 

@@ -1,42 +1,54 @@
 [
   {
-    "key": "cmd+numpad0",
-    "command": "-workbench.action.zoomReset"
+    "command": "-workbench.action.zoomReset",
+    "key": "cmd+numpad0"
   },
   {
-    "key": "cmd+numpad_add",
-    "command": "-workbench.action.zoomIn"
+    "command": "-workbench.action.zoomIn",
+    "key": "cmd+numpad_add"
   },
   {
-    "key": "shift+cmd+=",
-    "command": "-workbench.action.zoomIn"
+    "command": "-workbench.action.zoomIn",
+    "key": "shift+cmd+="
   },
   {
-    "key": "cmd+=",
-    "command": "-workbench.action.zoomIn"
+    "command": "-workbench.action.zoomIn",
+    "key": "cmd+="
   },
   {
-    "key": "cmd+numpad_subtract",
-    "command": "-workbench.action.zoomOut"
+    "command": "-workbench.action.zoomOut",
+    "key": "cmd+numpad_subtract"
   },
   {
-    "key": "shift+cmd+-",
-    "command": "-workbench.action.zoomOut"
+    "command": "-workbench.action.zoomOut",
+    "key": "shift+cmd+-"
   },
   {
-    "key": "cmd+-",
-    "command": "-workbench.action.zoomOut"
+    "command": "-workbench.action.zoomOut",
+    "key": "cmd+-"
   },
   {
-    "key": "cmd+=",
-    "command": "editor.action.fontZoomIn"
+    "command": "editor.action.fontZoomIn",
+    "key": "cmd+="
   },
   {
-    "key": "cmd+-",
-    "command": "editor.action.fontZoomOut"
+    "command": "editor.action.fontZoomOut",
+    "key": "cmd+-"
   },
   {
-    "key": "cmd+0",
-    "command": "editor.action.fontZoomReset"
+    "command": "editor.action.fontZoomReset",
+    "key": "cmd+0"
+  },
+  {
+    "command": "editor.gotoParentFold",
+    "key": "ctrl+alt+."
+  },
+  {
+    "command": "editor.gotoNextFold",
+    "key": "ctrl+alt+/"
+  },
+  {
+    "command": "editor.gotoPreviousFold",
+    "key": "ctrl+alt+,"
   }
 ]

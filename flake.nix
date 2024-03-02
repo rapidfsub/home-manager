@@ -31,6 +31,9 @@
 
       pkgx = import nixpkgs {
         system = x86_64-darwin;
+        config.allowUnfreePredicate = pkg: elem (getName pkg) [
+          "rar"
+        ];
       };
 
       machines = {
