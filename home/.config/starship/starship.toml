@@ -63,6 +63,12 @@ symbol = "exs "
 [elm]
 symbol = "elm "
 
+[env_var.mix_env]
+format = "with [$symbol $env_value]($style) "
+symbol = "MIX_ENV"
+variable = "MIX_ENV"
+default = "-"
+
 [fennel]
 symbol = "fnl "
 
