@@ -5,6 +5,7 @@
     ./home/asdf.nix
     ./home/direnv.nix
     ./home/git.nix
+    ./home/neovim.nix
     ./home/karabiner.nix
     ./home/mackup.nix
     ./home/starship.nix
