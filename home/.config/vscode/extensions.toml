@@ -27,6 +27,7 @@ recommendations = [
   "JakeBecker.elixir-ls",
   "jamilabreu.vscode-phoenix-snippets",
   "msaraiva.surface",
+  "pantajoe.vscode-elixir-credo",
   "phoenixframework.phoenix",
   "phoenix-liveview-snippets.phoenix-liveview-snippets",
   # dart
