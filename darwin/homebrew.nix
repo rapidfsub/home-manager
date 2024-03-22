@@ -36,10 +36,8 @@
       "tor-browser"
       # dev
       "docker"
-      "gitbutler"
       "iterm2"
       "livebook"
-      "pgadmin4"
       "postman"
       # font
       "font-fantasque-sans-mono-nerd-font"
