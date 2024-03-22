@@ -13,10 +13,12 @@
     home-manager
     rnix-lsp
     stack
+    pkgx.emscripten
     pkgx.fd
     pkgx.git-delete-merged-branches
     pkgx.rar
     pkgx.ripgrep
+    pkgx.tree-sitter
     pkgx.typos
   ];
 
