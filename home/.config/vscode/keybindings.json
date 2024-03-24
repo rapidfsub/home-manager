@@ -38,17 +38,5 @@
   {
     "command": "editor.action.fontZoomReset",
     "key": "cmd+0"
-  },
-  {
-    "command": "editor.gotoParentFold",
-    "key": "ctrl+alt+."
-  },
-  {
-    "command": "editor.gotoNextFold",
-    "key": "ctrl+alt+/"
-  },
-  {
-    "command": "editor.gotoPreviousFold",
-    "key": "ctrl+alt+,"
   }
 ]
